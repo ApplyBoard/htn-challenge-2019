@@ -1,0 +1,23 @@
+{
+  "name": "htn-challenge-2019",
+  "version": "1.0.0",
+  "description": "ApplyBoard Hack the North Challenge",
+  "main": "your_javascript_solution.js",
+  "dependencies": {
+    "jest": "^24.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ApplyBoard/htn-challenge-2019.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ApplyBoard/htn-challenge-2019/issues"
+  },
+  "homepage": "https://github.com/ApplyBoard/htn-challenge-2019#readme"
+}
