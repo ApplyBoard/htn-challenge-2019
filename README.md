@@ -23,15 +23,15 @@ For this lightning challenge you must parse through an actual production sample 
 The skeleton code and some basic tests are provided to you. 
 
 You have the choice of doing the challenge in one (or all if you are up for it) of three languages: 
-#### 1. Javascript 
-* Input your solution in the `javascript_solution.js` file
+#### 1. JavaScript 
+* Input your solution in the `javascript_solution.js` file. The file should export a function called `refineParameters` (`module.exports` or `export` are both fine).
 * (Optional) If you want to see if your code passes our test
 1. Run `npm install` to install `jest` testing framework
 2. Run `npm test` to see if the test pass
 #### 2. Ruby
-* Input your solution in the `ruby_solution.js` file
+* Input your solution in the `ruby_solution.rb` file
 #### 3. Python
-* Input your solution in the `python_solution.js` file
+* Input your solution in the `python_solution.py` file
 
 The winner of the challenge will be selected based on:
 
@@ -50,4 +50,4 @@ The winner of the challenge will be selected based on:
 * The winner of the ApplyBoard lightning challenge will receive a brand new Nintendo Switch! 🎮
 
 **BRONZE Tier (Sucessful submission)**
-* By completing this lightning challenge and submitting a pull request with the correct answer in any of the 3 languages you will receive a **ApplyBoard reusable straw**! Educate the world while saving the environment 🌲
+* By completing this lightning challenge and submitting a pull request with the correct answer in any of the 3 languages you will receive an **ApplyBoard reusable straw**! Educate the world while saving the environment 🌲
