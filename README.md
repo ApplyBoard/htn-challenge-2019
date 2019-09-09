@@ -12,18 +12,18 @@
 [applyboard-img]:                       https://didmdw8v48h5q.cloudfront.net/ca/wp-content/uploads/2018/07/New-2018-AB.png
 At ApplyBoard, we believe that education is a right, not a privilege. We empower people around the world to access the best education available. Through our platform and team of experts, we streamline the application process, from submission to enrolment, assisting thousands of students pursue their dreams of studying abroad.
 
-One of the most important aspects of our platform is our search page www.applyboard.com/quick_search which allows users to browse through our catalog and partnerships with over 1,200 of the top secondary and post-secondary institutions across North America. Users are able to discover schools and programs by applying a range of filters such as their country, province/state, school type, program level etc. In addition, users are able to discover their eligibility for these schools and programs by providing their nationality, education level, grading scheme, grading average and english exam type as an initial screening. 
+One of the most important aspects of our platform is our search page www.applyboard.com/quick_search which allows users to browse through our catalog and partnerships with over 1,200 of the top secondary and post-secondary institutions across North America. Users are able to discover schools and programs by applying a range of filters such as their country, province/state, school type, program level etc. In addition, users are able to discover their eligibility for these schools and programs by providing their nationality, education level, grading scheme, grading average and english exam type as an initial screening.
 
 Ultimately our search page must take this huge amount of user input information and parse it for our backend to understand and return back the appropriate programs and schools according to the user's criteria.
 
 ## Problem 🖥
 
-For this lightning challenge you must parse through an actual production sample json located at (`tests/challenge.json`) you receive from ApplyBoard.com. Our backend engineers however are unable to understand this JSON as all of the data types are strings. You must go through the json and convert each string into their appropriate datatype (eg. `"grade": "90"` of type string should be `grade: 90` of type integer. 
+For this lightning challenge you must parse through an actual production sample json located at (`tests/challenge.json`) you receive from ApplyBoard.com. Our backend engineers however are unable to understand this JSON as all of the data types are strings. You must go through the json and convert each string into their appropriate datatype (eg. `"grade": "90"` of type string should be `grade: 90` of type integer.
 
-The skeleton code and some basic tests are provided to you. 
+The skeleton code and some basic tests are provided to you.
 
-You have the choice of doing the challenge in one (or all if you are up for it) of three languages: 
-#### 1. JavaScript 
+You have the choice of doing the challenge in one (or all if you are up for it) of three languages:
+#### 1. JavaScript
 * Input your solution in the `javascript_solution.js` file. The file should export a function called `refineParameters` (`module.exports` or `export` are both fine).
 * (Optional) If you want to see if your code passes our test
 1. Run `npm install` to install `jest` testing framework
@@ -32,6 +32,16 @@ You have the choice of doing the challenge in one (or all if you are up for it) 
 * Input your solution in the `ruby_solution.rb` file
 #### 3. Python
 * Input your solution in the `python_solution.py` file
+* To test your solution locally use the following steps:
+1. [Install](https://pip.pypa.io/en/stable/installing/) pip
+2. Install `pytest` using the following command:
+```
+pip install -r requirements.txt
+```
+3. Use pytest to run the tests with the following command:
+```
+pytest
+```
 
 The winner of the challenge will be selected based on:
 
