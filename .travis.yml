@@ -1,0 +1,8 @@
+language: minimal
+
+install:
+- pip install -r requirements.txt
+- npm install
+
+script:
+ - npm test || pytest || rake || travis_terminate 0
