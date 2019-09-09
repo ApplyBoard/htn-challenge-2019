@@ -26,10 +26,20 @@ You have the choice of doing the challenge in one (or all if you are up for it) 
 #### 1. JavaScript
 * Input your solution in the `javascript_solution.js` file. The file should export a function called `refineParameters` (`module.exports` or `export` are both fine).
 * (Optional) If you want to see if your code passes our test
-1. Run `npm install` to install `jest` testing framework
-2. Run `npm test` to see if the test pass
+1. Use the following command to install `jest` testing framework
+```
+npm install
+```
+2. Use the following command to run the tests
+```
+npm test
+```
 #### 2. Ruby
 * Input your solution in the `ruby_solution.rb` file
+* To test your solution locally use the following command:
+```
+ruby tests/ruby_solution.rb
+```
 #### 3. Python
 * Input your solution in the `python_solution.py` file
 * To test your solution locally use the following steps:
