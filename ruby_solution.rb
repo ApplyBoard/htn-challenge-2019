@@ -1,9 +1,17 @@
 require "json"
 
-def refineParameters input
-  # If you want to use the input file before running the tests, uncomment the following line
-  # input = JSON.parse(File.read(File.join(File.dirname(File.absolute_path(__FILE__)), 'tests/challenge.json')))
-
-  # Write your code here.
-  return input
+def refineParameters(input)
+  if input.class == Hash
+    input.each { |key, value| input[key] = refineParameters(value) }
+  elsif input.class == Array
+    input.map { |v| refineParameters(v) }
+  elsif input == 'true'
+    true
+  elsif input == 'false'
+    false
+  else
+    Integer(input)
+  end
+rescue ArgumentError
+  input
 end
