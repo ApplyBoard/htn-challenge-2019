@@ -13,14 +13,14 @@ def refine_parameters(data: dict):
         if type(item) is dict:
             ret = {}
             for key in item.keys():
-                ret[key] = numberify(item[key])  # Recurse
+                ret[key] = parse(item[key])  # Recurse
             return ret
 
         # Parse lists
         elif type(item) is list:
             ret = []
             for value in item:
-                ret.append(numberify(value))  # Recurse
+                ret.append(parse(value))  # Recurse
             return ret
 
         # Parse strings
