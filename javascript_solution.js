@@ -4,17 +4,17 @@ function convertToType(item) {
   if (isNaN(item)) {
     if (item.toUpperCase() === 'TRUE' || item.toUpperCase() === 'FALSE') {
       return (item.toUpperCase() === 'TRUE')
+    } else if (item === "undefined") {
+      return undefined
+    } else if (item === "null") {
+      return null
+    } else if (Array.isArray(item)){
+      return item.forEach(convertToType(item))
+    } else if (typeof(item) === 'object'){
+      return refineParameters(item)
     } else {
       return item
     }
-  } else if (item === "undefined") {
-    return undefined
-  } else if (item === "null") {
-    return null
-  } else if (Array.isArray(item)){
-    return item.forEach(convertToType(item))
-  } else if (typeof(item) === 'object'){
-    return refineParameters(item)
   } else {
     return Number(item)
   }
