@@ -12,7 +12,7 @@ const isWordNum = (word) => {
     if(!isCharInt(word[i])){
       if(!dotFound && word[i] === "."){
         dotFound = true;
-      } else {
+      } else if (!(i === 0 && word[i] === "-" && word.length !== 1)) {
         return false;
       }
     }
@@ -21,7 +21,9 @@ const isWordNum = (word) => {
 }
 
 const evaluateString = (s) => {
-  if(s === true || s === "true"){
+  if(s === null || s === undefined){
+    return s;
+  } else if(s === true || s === "true"){
     return true;
   } else if(s === false || s === "false"){
     return false;
