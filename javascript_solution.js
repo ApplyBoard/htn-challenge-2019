@@ -12,6 +12,12 @@ function convertToType(item) {
       return item.forEach(convertToType(item))
     } else if (typeof(item) === 'object'){
       return refineParameters(item)
+    } else if (item.match(/[0-9]+(\.[0-9]+)?x10\^[0-9]+/)) {
+      numAr = item.toUpperCase().split("X10^")
+      return numAr[0] * Math.pow(10,numAr[1])
+    } else if (item.match(/[0-9]+(\.[0-9]+)?e[0-9]+/)) {
+      numAr = item.toUpperCase().split("X10^")
+      return numAr[0] * Math.pow(10,numAr[1])
     } else {
       return item
     }
