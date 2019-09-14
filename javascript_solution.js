@@ -15,7 +15,7 @@ const convertObj = (item) => refineParameters(item)
 const checkSci1 = (item) => item.match(/[0-9]+(\.[0-9]+)?x10\^[0-9]+/)
 const convertSci1 = (item) => {numAr = item.toUpperCase().split("X10^"); return numAr[0] * Math.pow(10,numAr[1])}
 const checkSci2 = (item) => item.match(/[0-9]+(\.[0-9]+)?e[0-9]+/)
-const convertSci2 = (item) => {numAr = item.toUpperCase().split("X10^"); return numAr[0] * Math.pow(10,numAr[1])}
+const convertSci2 = (item) => {numAr = item.toUpperCase().split("e"); return numAr[0] * Math.pow(10,numAr[1])}
 
 function convertToType(item) {
   if (checkNum(item)) {
