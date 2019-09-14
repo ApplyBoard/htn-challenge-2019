@@ -6,7 +6,7 @@ def refine_parameters(data):
         Return a dictionary of cleaned input
     '''
     clean_dict = {}
-    # print(data)
+
     for key in data:
         if isinstance(data[key], dict):
             clean_dict[key] = refine_parameters(data[key])
@@ -18,7 +18,6 @@ def refine_parameters(data):
         else:
             element = data[key]
             clean_dict[key] = check_type(element)
-    print(clean_dict)
     return clean_dict
 
 
@@ -34,15 +33,3 @@ def check_type(data):
 
 def is_num(s):
     return all(i.isdigit() for i in s)
-
-
-# def 
-
-#     eng_test
-#     grade
-#     grade_scale
-#     grading_scheme
-
-    # Write your code here.
-
-    # return clean_dict
