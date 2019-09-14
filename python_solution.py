@@ -1,21 +1,31 @@
 def numberify(item):
+    # Parse dictionaries
     if type(item) is dict:
         ret = {}
         for key in item.keys():
             ret[key] = numberify(item[key])
         return ret
+
+    # Parse lists
     elif type(item) is list:
         ret = []
-        for item in item:
-            ret.append(numberify(item))
+        for value in item:
+            ret.append(numberify(value))
         return ret
+
+    # Parse strings
     elif type(item) is str:
-        if item == "true":
+        # Handle booleans
+        if item.lower() == "true":
             return True
-        elif item == "false":
+        elif item.lower() == "false":
             return False
+
+        # Handle integer values
         elif item.isdigit():
             return int(item)
+
+        # No conversion, return string
         return item
 
 
