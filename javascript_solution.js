@@ -23,7 +23,7 @@ const parseData = (data) => {
     // JSON.parse() can format either numbers or booleans
     // If it fails, it means that the data should be a string
     newData = JSON.parse(data)
-  } catch {
+  } catch(error) {
     newData = data
   }
   return newData
