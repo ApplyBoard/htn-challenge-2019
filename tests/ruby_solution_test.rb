@@ -13,4 +13,15 @@ class TestRefineParameters < Test::Unit::TestCase
     assert_equal(refineParameters(input), solution)
   end
 
+  def test_null
+    solution = JSON.parse(File.read('tests/completeWithNullValues.json'))
+    input = JSON.parse(File.read('tests/challengeWithNullValues.json'))
+    assert_equal(refineParameters(input), solution)
+  end
+
+  def test_floats
+    solution = JSON.parse(File.read('tests/completeWithFloatValues.json'))
+    input = JSON.parse(File.read('tests/challengeWithFloatValues.json'))
+    assert_equal(refineParameters(input), solution)
+  end
 end

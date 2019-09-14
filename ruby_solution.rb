@@ -1,17 +1,32 @@
 require "json"
 
 def refineParameters(input)
-  if input.class == Hash
+  case input
+  when Hash
     input.each { |key, value| input[key] = refineParameters(value) }
-  elsif input.class == Array
+  when Array
     input.map { |v| refineParameters(v) }
-  elsif input == 'true'
-    true
-  elsif input == 'false'
-    false
+  when 'null'
+    nil
+  when boolean?
+    input == 'true'
+  when float?
+    input.to_f
+  when integer?
+    input.to_i
   else
-    Integer(input)
+    input
   end
-rescue ArgumentError
-  input
+end
+
+def boolean?
+  ->(value) { %w(true false).include?(value) }
+end
+
+def float?
+  ->(value) { !!Float(value) rescue false }
+end
+
+def integer?
+  ->(value) { !!Integer(value) rescue false }
 end
