@@ -15,3 +15,7 @@ def test_refine_parameters():
     processed_dict = refine_parameters(data=challenge)
 
     assert processed_dict == expected_dict
+    print("pass :)")
+
+
+test_refine_parameters()
