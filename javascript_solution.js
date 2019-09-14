@@ -1,7 +1,7 @@
 const json = require('./tests/challenge.json');
 
 const isBoolean = (string) => string === 'true' || string === 'false';
-const isNumber = (string) => /^[0-9]+$/.test(string);
+const isNumber = (string) => /^[0-9]+(\.[0-9]+)?$/.test(string);
 const isArray = (object) => Array.isArray(object);
 const isObject = (object) => typeof(object) === 'object'
 
@@ -16,7 +16,7 @@ const refineParameters = data => {
   if (isBoolean(data)) {
     return parseBoolean(data);
   } else if (isNumber(data)) {
-    return parseInt(data);
+    return parseFloat(data);
   } else if (isArray(data)) {
     return data.map(v => refineParameters(v));
   } else if (isObject(data)) {

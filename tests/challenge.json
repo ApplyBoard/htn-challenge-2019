@@ -4,6 +4,9 @@
         "last_name": "North"
     },
     "grade": "90",
+    "x": {
+      "y": ["3.34", "hello", "true"]
+    },
     "grade_scale": "100",
     "grading_scheme": "0",
     "has_ca_study_permit": "true",
