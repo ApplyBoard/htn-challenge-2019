@@ -25,6 +25,9 @@ def refine_parameters(data: dict):
 
         # Parse strings
         elif type(item) is str:
+            # Strip whitespace for proper boolean and integer detection
+            item = item.strip()
+
             # Handle booleans
             if item.lower() == "true":
                 return True
@@ -35,7 +38,7 @@ def refine_parameters(data: dict):
             elif item.isdigit():
                 return int(item)
 
-            # No conversion, return string
+            # No conversion, return stripped string
             return item
 
 
