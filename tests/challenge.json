@@ -4,6 +4,13 @@
         "last_name": "North"
     },
     "grade": "90",
+    "k": "null",
+    "b": {},
+    "hard_number": "-23.89e-4",
+    "meh_number": "12e2",
+    "x": {
+      "y": ["3.34", "1e-2", ["-12.3", ["12512.2", "false", []]], "hello", "true"]
+    },
     "grade_scale": "100",
     "grading_scheme": "0",
     "has_ca_study_permit": "true",
