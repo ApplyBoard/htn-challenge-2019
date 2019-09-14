@@ -1,5 +1,5 @@
 import json
-from python_solution import refine_parameters
+from ..python_solution import refine_parameters
 
 
 def test_refine_parameters():
