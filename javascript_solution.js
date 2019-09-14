@@ -7,6 +7,10 @@ function convertToType(item) {
     } else {
       return item
     }
+  } else if (item === "undefined") {
+    return undefined
+  } else if (item === "null") {
+    return null
   } else if (Array.isArray(item)){
     return item.forEach(convertToType(item))
   } else if (typeof(item) === 'object'){
