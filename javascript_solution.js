@@ -42,7 +42,7 @@ const refineParameters = overallData => {
 }
 
 // Comment out the line below to console.log and call your function to debug
-console.log('formattedJson: ', refineParameters(json));
+// console.log('formattedJson: ', refineParameters(json));
 
 // ----- Do not modify anything below this line (needed for test suite) ------
 module.exports = refineParameters;
