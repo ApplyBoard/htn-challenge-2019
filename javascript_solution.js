@@ -1,7 +1,7 @@
 const json = require('./tests/challenge.json');
 
 const isBoolean = (string) => string.toLowerCase() === 'true' || string.toLowerCase() === 'false';
-const isNumber = (string) => /^-?[0-9]+(\.[0-9]+)?$/.test(string);
+const isNumber = (string) => /^-?[0-9]+(\.[0-9]+)?(e-?[0-9]+)?$/.test(string);
 const isArray = (object) => Array.isArray(object);
 const isObject = (object) => typeof(object) === 'object';
 const isNull = (string) => string.toLowerCase() === "null";

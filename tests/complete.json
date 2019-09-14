@@ -12,6 +12,8 @@
     "w": 9
   },
   "b": {},
+  "hard_number": -0.002389,
+  "meh_number": 1200,
   "k": null,
   "grade": 90,
   "grade_scale": 100,
@@ -30,7 +32,7 @@
     ]
   },
   "x": {
-    "y": [3.34, [-12.3, [12512.2, false, []]], "hello", true]
+    "y": [3.34, 0.01, [-12.3, [12512.2, false, []]], "hello", true]
   },
   "nationality": "NP",
   "only_direct": false,
