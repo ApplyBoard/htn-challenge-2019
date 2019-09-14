@@ -1,15 +1,36 @@
 const json = require('./tests/challenge.json');
 
-const refineParameters = data => {
-  // Write your code here.
-  // Remember to call this function to return the formatted json
-  // with the json imported at the top of this file
-
-  // Run this file with `node javascript_solution.js` in your CLI to verify your answer
+/**
+ * 
+ * Why reinvent the wheel?
+ * JSON.stringify() provides a replacer as the second argument, which iterates over key-value pairs.
+ * In the case that the value is meant to be boolean or a number, 
+ * we replace it with the corresponding value.
+ * Further reading: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+ * 
+ * @param {string} _ The key of the json key value pair to transform
+ * @param {*} value The value to be converted into the appropriate datatype.
+ * 
+ * 
+ * 
+ */
+function _replacer(_, value) {
+  if (value === "true") return true;
+  if (value === "false") return false;
+  if (!isNaN(value)) return Number(value);
+  return value;
 }
 
-// Comment out the line below to console.log and call your function to debug
-// console.log('formattedJson: ', refineParameters(json));
+/**
+ * Goes through a JSON object, turning each string into its appropriate datatype.
+ * 
+ * @param {Object} data The parameter object to be refined.
+ * @returns The clean JSON object.
+ */
+const refineParameters = data => {
+  return JSON.parse(JSON.stringify(data, _replacer))
+}
+
 
 // ----- Do not modify anything below this line (needed for test suite) ------
 module.exports = refineParameters;
