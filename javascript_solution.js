@@ -1,9 +1,10 @@
 const json = require('./tests/challenge.json');
 
-const isBoolean = (string) => string === 'true' || string === 'false';
+const isBoolean = (string) => string.toLowerCase() === 'true' || string.toLowerCase() === 'false';
 const isNumber = (string) => /^-?[0-9]+(\.[0-9]+)?$/.test(string);
 const isArray = (object) => Array.isArray(object);
-const isObject = (object) => typeof(object) === 'object'
+const isObject = (object) => typeof(object) === 'object';
+const isNull = (string) => string.toLowerCase() === "null";
 
 const parseBoolean = (b) => b === 'true';
 
@@ -13,9 +14,11 @@ const refineParameters = data => {
   // with the json imported at the top of this file
 
   // Run this file with `node javascript_solution.js` in your CLI to verify your answer
-  if (isBoolean(data)) {
+  if (typeof(data) == "string" && isBoolean(data)) {
     return parseBoolean(data);
-  } else if (isNumber(data)) {
+  } else if (typeof(data) == "string" && isNull(data)) {
+    return null;
+  } else if (typeof(data) == "string" && isNumber(data)) {
     return parseFloat(data);
   } else if (isArray(data)) {
     return data.map(v => refineParameters(v));
