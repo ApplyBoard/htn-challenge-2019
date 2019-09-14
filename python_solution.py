@@ -8,5 +8,6 @@ def refine_parameters(data: dict):
     clean_dict = {}
 
     # Write your code here.
+    print('PLEASE WORK OH GAWD PLEASE I WANT THAT SWITCH')
 
     return clean_dict
