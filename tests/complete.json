@@ -28,7 +28,7 @@
     ]
   },
   "x": {
-    "y": [3.34, "hello", true]
+    "y": [3.34, [-12.3, [12512.2, false, []]], "hello", true]
   },
   "nationality": "NP",
   "only_direct": false,
