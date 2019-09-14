@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/aprabaka/htn-challenge-2019/master)
+
 # ApplyBoard Hack the North Lightning Challenge  🎓
 
 <p align="center">
