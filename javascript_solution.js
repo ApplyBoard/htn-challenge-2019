@@ -9,6 +9,8 @@ function convertToType(item) {
     }
   } else if (Array.isArray(item)){
     return item.forEach(convertToType(item))
+  } else if (typeof(item) === 'object'){
+    return refineParameters(item)
   } else {
     return Number(item)
   }
