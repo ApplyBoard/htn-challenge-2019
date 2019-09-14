@@ -1,15 +1,32 @@
 const json = require('./tests/challenge.json');
 
-const refineParameters = data => {
-  // Write your code here.
-  // Remember to call this function to return the formatted json
-  // with the json imported at the top of this file
+// Converts parameters from strings to the correct type
+function convertData(str){
+  if(str === "true") return true;
+  if(str === "false") return false;
+  if(Number(str)) return Number(str);
 
-  // Run this file with `node javascript_solution.js` in your CLI to verify your answer
+  return str;
+}
+
+const refineParameters = data => {
+  var refinedData = {};
+
+  // Iterate over properties to refine
+  for(var prop in data){
+    // Recurse on objects or arrays
+    if(typeof data[prop] ===  "object"){
+      refinedData[prop] = refineParameters(data[prop]);
+    }else{
+      refinedData[prop] = convertData(data[prop]);
+    }
+  }
+
+  return refinedData;
 }
 
 // Comment out the line below to console.log and call your function to debug
-// console.log('formattedJson: ', refineParameters(json));
+ console.log('formattedJson: ', refineParameters(json));
 
 // ----- Do not modify anything below this line (needed for test suite) ------
 module.exports = refineParameters;
