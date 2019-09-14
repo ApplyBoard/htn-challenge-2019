@@ -1,47 +1,31 @@
 const json = require('./tests/challenge.json')
 
-const refineParameters = data => {
-  const numArrays = [
-    'grade',
-    'grade_scale',
-    'grading_scheme',
-    'student_id',
-    'student_information_id',
-  ]
-  const numNested = ['school_ids', 'school_types']
-  const boolArr = ['has_ca_study_permit', 'has_us_study_permit', 'only_direct']
-  const boolObj = {
-    id: 'intakes',
-    fields: ['subValue'],
-  }
-  const numObj = {
-    id: 'eng_test',
-    fields: ['l', 'r', 's', 'w'],
-  }
+const numRegEx = /^[0-9]*$/
 
-  const keys = Object.keys(data)
+const checkKeys = obj => {
+  const keys = Object.keys(obj)
   keys.forEach(key => {
-    if (numArrays.includes(key)) {
-      data[key] = parseInt(data[key])
-    }
-    if (numNested.includes(key)) {
-      data[key] = data[key].map(i => parseInt(i))
-    }
-    if (boolArr.includes(key)) {
-      data[key] = data[key] === 'true'
-    }
-    if (numObj.id == key) {
-      numObj.fields.forEach(i => {
-        data[key][i] = parseInt(data[key][i])
-      })
-    }
-    if (boolObj.id == key) {
-      boolObj.fields.forEach(i => {
-        data[key][i] = data[key][i] === 'true'
-      })
+    if (typeof obj[key] === 'object') obj[key] = checkKeys(obj[key])
+    else if (Array.isArray(obj[key])) obj[key] = checkArr(obj[key])
+    else if (obj[key] === 'true' || obj[key] === 'false') {
+      obj[key] = obj[key] === 'true'
+    } else if (numRegEx.test(obj[key])) {
+      obj[key] = parseFloat(obj[key])
     }
   })
-  return data
+  return obj
+}
+
+const checkArr = arr =>
+  arr.map(item => {
+    if (typeof item === 'object') item = checkKeys(item)
+    else if (item === 'true') return item === 'true'
+    else if (numRegEx.test(item)) return parseFloat(item)
+    else return item
+  })
+
+const refineParameters = data => {
+  return typeof data === 'object' ? checkKeys(data) : checkArr(data)
 
   // Write your code here.
   // Remember to call this function to return the formatted json
@@ -49,7 +33,6 @@ const refineParameters = data => {
 
   // Run this file with `node javascript_solution.js` in your CLI to verify your answer
 }
-
 // Comment out the line below to console.log and call your function to debug
 // console.log('formattedJson: ', refineParameters(json));
 
