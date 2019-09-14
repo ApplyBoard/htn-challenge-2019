@@ -8,4 +8,4 @@ install:
 - npm install
 
 script:
- - npm test || pytest || ruby tests/ruby_solution_test.rb || travis_terminate 0
+ - npm test || pytest || ruby tests/ruby_solution_test.rb || travis_terminate 1
