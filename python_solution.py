@@ -24,9 +24,9 @@ def recur(data: dict):
                 data[valuein] = properChange(data[valuein])
 
 def properChange(inp):
-    if inp == "true":
+    if inp in ["true", "True"]:
         return True
-    elif inp == "false":
+    elif inp in ["false", "False"]:
         return False
     elif str.isdigit(inp):
         return int(inp)
