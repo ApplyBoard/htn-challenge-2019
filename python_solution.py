@@ -7,7 +7,7 @@ def refine_parameters(data: dict):
     '''
     clean_dict = {}
 
-    for i in dict:
+    for key in dict:
         if str(int(dict[x])) == dict[x]:
             clean_dict[x] = int(dict[x])
         elif dict[x] == "True":
