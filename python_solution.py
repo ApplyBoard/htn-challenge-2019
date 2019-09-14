@@ -6,7 +6,8 @@ def refine_parameters(data: dict):
     '''
 
 
-    '''Helper function to recursively parse the object'''
+    '''Helper function to recursively parse an object of unknown type
+    Supports dist, list, and str'''
     def numberify(item):
         # Parse dictionaries
         if type(item) is dict:
