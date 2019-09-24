@@ -5,7 +5,7 @@ def refine_parameters(data: dict):
     Returns:
         Return a dictionary of cleaned input
     '''
-    clean_dict = {}
+    clean_dict = dict
 
     for key in dict:
         if str(int(dict[x])) == dict[x]:
